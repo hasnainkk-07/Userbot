@@ -182,7 +182,7 @@ async def tag_all_users(client: Client, message: Message):
     if len(message.text.split()) >= 2:
         text = message.text.split(None, 1)[1]
     else:
-        text = "𝐇𝐞𝐥𝐥𝐨 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄 𝐒𝐀𝐌𝐔𝐑𝐀𝐈'𝐒 😊"
+        text = "𝐇𝐞𝐥𝐥𝐨 every one 😊"
     kek = client.get_chat_members(message.chat.id)
     async for a in kek:
         if not a.user.is_bot:
