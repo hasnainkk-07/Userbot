@@ -94,7 +94,7 @@ async def alive_function(message: Message, answers):
         InlineQueryResultArticle(
             title="alipp",
             description="Check Bot's Stats",
-            thumb_url="https://graph.org/file/83978974fe5be2da118d7.jpg",
+            thumb_url="https://files.catbox.moe/edeh8k.jpg",
             input_message_content=InputTextMessageContent(
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
@@ -120,8 +120,8 @@ async def pingme(client: Client, message: Message):
 
 async def peler_function(message: Message, answers):
     msg = (
-        f"Japanese-X-Userbot \n"
-        "ㅤㅤStatus : Japanese-X-Userbot Active \n"
+        f"Goku-X-Userbot \n"
+        "ㅤㅤStatus : Goku-X-Userbot Active \n"
         f"ㅤㅤㅤㅤModules:</b> <code>{len(modules)} Modules</code> \n"
         f"ㅤㅤㅤㅤBot Version: {BOT_VER} \n"
         f"ㅤㅤㅤㅤBranch: {branch} \n\n"
@@ -130,12 +130,12 @@ async def peler_function(message: Message, answers):
         InlineQueryResultArticle(
             title="alive",
             description="Check Bot's Stats",
-            thumb_url="https://graph.org/file/0ed7be5cf4fdbf052afa9.jpg",
+            thumb_url="https://files.catbox.moe/edeh8k.jpg",
             input_message_content=InputTextMessageContent(
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/Japanese_Userbot"), InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/Nobitaa_xd")], [InlineKeyboardButton(text="ᴍᴇɴᴜ", callback_data="reopen")]]
+                [[InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url="https://t.me/Hindi_new_Animes"), InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/xeno_kakarot")], [InlineKeyboardButton(text="ᴍᴇɴᴜ", callback_data="reopen")]]
             ),
         )
     )
@@ -148,7 +148,7 @@ async def help_function(answers):
         InlineQueryResultArticle(
             title="Help Article!",
             description="Check Command List & Help",
-            thumb_url="https://graph.org/file/0ed7be5cf4fdbf052afa9.jpg",
+            thumb_url="https://files.catbox.moe/edeh8k.jpg",
             input_message_content=InputTextMessageContent(
                 Data.text_help_menu.format(len(CMD_HELP))
             ),
