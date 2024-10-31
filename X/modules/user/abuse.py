@@ -38,7 +38,7 @@ from .help import *
 import asyncio
 
 @Client.on_message(
-    filters.command(["abuse"], ".") & (filters.me | filters.user(SUDO_USERS))
+    filters.command(["abuse", "fuckoff", "maachuda"], ".") & (filters.me | filters.user(SUDO_USERS))
 )
 async def abuse(x: Client, e: Message):
     NOBI = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
