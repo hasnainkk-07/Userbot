@@ -1,6 +1,6 @@
 #MIT License
 
-#Copyright (c) 2024 Japanese-X-Userbot
+#Copyright (c) 2024 goku-X-Userbot
 
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -91,7 +91,7 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     this_command = f"──「 **Help For {str(modul_name).upper()}** 」──\n\n"
     for x in commands:
         this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-    this_command += "© @Nobitaa_xd"
+    this_command += "© @xeno_kakarot"
     bttn = [
         [InlineKeyboardButton(text="•─╼⃝𖠁 ʀᴇᴛᴜʀɴ 𖠁⃝╾─•", callback_data="reopen")],
     ]
