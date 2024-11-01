@@ -21,7 +21,7 @@ psutil
 psycopg2-binary
 ptable
 pymediainfo
-pyrogram
+pyrogram==2.0.106
 pytgcalls==3.0.0.dev24
 python-dotenv
 pykeyboard
