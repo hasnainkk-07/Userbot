@@ -1,6 +1,6 @@
 #MIT License
 
-#Copyright (c) 2024 Japanese-X-Userbot
+#Copyright (c) 2024 Goku-X-Userbot
 
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -32,10 +32,10 @@ pm_watcher = 5
 
 TEXT = """
 ╭═══════════════════╮
-✧ 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄 𝐗 𝐔𝐒𝐄𝐑𝐁𝐎𝐓✧
+✧ GOKU 𝐗 𝐔𝐒𝐄𝐑𝐁𝐎𝐓✧
 ╰═══════════════════╯
 ╰• **ᴏᴡɴᴇʀ** » {}
-• **ᴛʜɪs ɪs 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄 𝐗 𝐔𝐒𝐄𝐑𝐁𝐎𝐓 ᴘᴍ sᴇᴄᴜʀɪᴛʏ 🛡️**
+• **ᴛʜɪs ɪs GOKU 𝐗 𝐔𝐒𝐄𝐑𝐁𝐎𝐓 ᴘᴍ sᴇᴄᴜʀɪᴛʏ 🛡️**
 ➖➖➖➖➖➖➖➖➖➖➖ 
     **ʜᴇʏ ꜱᴀᴍᴜʀᴀɪ** 🥀
     **ɪғ ʏᴏᴜ sᴘᴀᴍ ʜᴇʀᴇ ᴡɪᴛʜᴏᴜᴛ ᴍʏ**
@@ -45,7 +45,7 @@ TEXT = """
 ⚝  **ʏᴏᴜʀ ᴡᴀʀɴs** » {}
 ➖➖➖➖➖➖➖➖➖➖➖
 •
-╰───❰ [ᴍᴀᴋᴇ ᴍᴇ ʏᴏᴜʀs](https://github.com/Team-Japanese/Japanese-X-Userbot) ❱
+╰───❰ [ᴍᴀᴋᴇ ᴍᴇ ʏᴏᴜʀs](https://github.com/Gokukhan1/userbot) ❱
 """
 
 @Client.on_message(filters.command("pmpermit", hl) & filters.me)
