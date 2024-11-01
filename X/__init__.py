@@ -54,7 +54,7 @@ from config import (
     SUDO_USERS,
     BOT_TOKEN
 )
-from hasnainkk import bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10
+from X.hasnainkk import bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10
 
 # Creating instances for bot1 to bot10
 bot1 = bot1()
