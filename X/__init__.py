@@ -54,6 +54,21 @@ from config import (
     SUDO_USERS,
     BOT_TOKEN
 )
+from hasnainkk import bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10
+
+# Creating instances for bot1 to bot10
+bot1 = bot1()
+bot2 = bot2()
+bot3 = bot3()
+bot4 = bot4()
+bot5 = bot5()
+bot6 = bot6()
+bot7 = bot7()
+bot8 = bot8()
+bot9 = bot9()
+bot10 = bot10()
+
+
 DATABASE_URL = DB_URL
 CMD_HELP = {}
 SUDO_USER = SUDO_USERS
