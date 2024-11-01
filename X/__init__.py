@@ -116,7 +116,11 @@ LOOP = asyncio.get_event_loop()
 
 trl = Translator()
 
-aiosession = ClientSession()
+async def create_session():
+    global aiosession
+    aiosession = ClientSession()
+
+asyncio.run(create_session())
 
 CMD_HELP = {}
 
