@@ -20,10 +20,10 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
+import asyncio
 import importlib
 from pyrogram import idle
 from uvloop import install
-
 
 from X.modules import ALL_MODULES
 from X import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids, bot1
@@ -31,7 +31,7 @@ from X.helpers import join
 from X.helpers.misc import create_botlog, heroku
 
 BOT_VER = "4.0.0"
-CMD_HANDLER = ["." "?" "!" "*"]
+CMD_HANDLER = [".", "?", "!", "*"]
 MSG_ON = """
 ✧✧ **GOKU-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄** ✧✧
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
@@ -40,13 +40,15 @@ MSG_ON = """
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 """
 
-
 async def main():
     await app.start()
     print("𝐋𝐎𝐆: 𝐅𝐨𝐮𝐧𝐝𝐞𝐝 𝐁𝐨𝐭 𝐭𝐨𝐤𝐞𝐧 𝐁𝐨𝐨𝐭𝐢𝐧𝐠..")
     for all_module in ALL_MODULES:
-        importlib.import_module("X.modules" + all_module)
-        print(f"𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐈𝐦𝐩𝐨𝐫𝐭𝐞𝐝 {all_module} ")
+        try:
+            importlib.import_module("X.modules" + all_module)
+            print(f"𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐈𝐦𝐩𝐨𝐫𝐭𝐞𝐝 {all_module} ")
+        except ImportError as e:
+            print(f"Failed to import {all_module}: {e}")
     for bot in bots:
         try:
             await bot.start()
@@ -54,20 +56,20 @@ async def main():
             await join(bot)
             try:
                 await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
-            except BaseException:
-                pass
+            except Exception as msg_error:
+                print(f"Failed to send message to bot log: {msg_error}")
             print(f"𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐚𝐬 {ex.first_name} | {ex.id} ")
             ids.append(ex.id)
         except Exception as e:
-            print(f"{e}")
+            print(f"Error starting bot: {e}")
     if not str(BOTLOG_CHATID).startswith("-100"):
         await create_botlog(bot1)
     await idle()
     await aiosession.close()
 
-
 if __name__ == "__main__":
     LOGGER("X").info("GOKU-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐈𝐬 𝐀𝐜𝐭𝐢𝐯𝐞✨")
-    install()
+    install()  # Set up uvloop
+    asyncio.set_event_loop(asyncio.new_event_loop())  # Create and set a new event loop
     heroku()
     LOOP.run_until_complete(main())
