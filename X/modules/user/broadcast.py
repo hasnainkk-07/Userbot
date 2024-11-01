@@ -73,7 +73,7 @@ del _GCAST_BLACKLIST
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`Limit Don't blame JAPANESE X USERBOT, Started global broadcast...`")
+        Man = await edit_or_reply(message, "`Limit Don't blame Goku X USERBOT, Started global broadcast...`")
     else:
         return await message.edit_text("**The message is Where to fuck**")
     done = 0
