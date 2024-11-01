@@ -61,6 +61,9 @@ clients = []
 ids = []
 LOG_FILE_NAME = "logs.txt"
 
+WORKERS = 8
+NO_LOAD = []
+
 logging.basicConfig(
     level=logging.INFO,
     format="[%(levelname)s] - %(name)s - %(message)s",
@@ -134,15 +137,31 @@ TEMP_SETTINGS: Dict[Any, Any] = {}
 TEMP_SETTINGS["PM_COUNT"] = {}
 TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
-app = Client(
-    name="app",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins=dict(root="X/modules/bot"),
-    in_memory=True,
-)
+#app = Client(
+#    name="app",
+ #   api_id=API_ID,
+#    api_hash=API_HASH,
+#    bot_token=BOT_TOKEN,
+#    plugins=dict(root="X/modules/bot"),
+#    in_memory=True,
+#)
 
+class app(Client):
+    """Starts the Pyrogram Client on the Bot Token when we do 'python3 -m hasnainkk'"""
+
+    def __init__(self):
+        # name = hasnainkk
+
+        super().__init__(
+            "app",
+            bot_token=BOT_TOKEN,
+            plugins=dict(root="X.modules.bot", exclude=NO_LOAD),
+            api_id=API_ID,
+            api_hash=API_HASH,
+            workers=WORKERS,
+        )
+        
+"""
 bot1 = (
     Client(
         name="bot1",
@@ -262,7 +281,7 @@ bot10 = (
     if STRING_SESSION10
     else None
 )
-
+"""
 
 bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
 
