@@ -204,7 +204,7 @@ async def upstream(client: Client, message: Message):
         except GitCommandError:
             pass
         await status.edit(
-            "`Japanese X Userbot Updated Successfully! Userbot can be used again.`"
+            "`GOKU X Userbot Updated Successfully! Userbot can be used again.`"
         )
     else:
         try:
@@ -213,7 +213,7 @@ async def upstream(client: Client, message: Message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await status.edit(
-            "`Japanese X Userbot Updated Successfully! Userbot can be used again.`",
+            "`GOKU X Userbot Updated Successfully! Userbot can be used again.`",
         )
         args = [sys.executable, "-m", "X"]
         execle(sys.executable, *args, environ)
