@@ -300,6 +300,16 @@ bot10 = (
 
 bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
 
+#for bot in bots:
+#    if not hasattr(bot, "group_call"):
+#        setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
+
+
 for bot in bots:
-    if not hasattr(bot, "group_call"):
-        setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
+    try:
+        # This assumes the bots need to connect before using them
+        bot.start()
+        if not hasattr(bot, "group_call"):
+            setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
+    except Exception as e:
+        LOGGER(__name__).error(f"Failed to start bot {bot.name}: {str(e)}")
